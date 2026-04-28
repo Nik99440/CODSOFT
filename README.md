@@ -163,3 +163,146 @@ Open `Titanic_Survival_codsoft.ipynb` in Jupyter Notebook or Google Colab and ru
 ---
 
 ## Project Structure
+
+# 📈 Sales Prediction
+
+> A machine learning project predicting product sales based on advertising spend across TV, Radio, and Newspaper channels — built as part of the **CodSoft ML Internship**.
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)](https://scikit-learn.org)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-yellow.svg)](https://jupyter.org)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Nik99440/CODSOFT/blob/main/SALES_PREDICTION_codsoft.ipynb)
+
+---
+
+## 📌 Project Overview
+
+This project builds a **Linear Regression model** to predict product sales based on advertising budgets allocated to TV, Radio, and Newspaper channels. The goal is to help businesses understand which advertising medium drives the most sales.
+
+---
+
+## 📂 Dataset
+
+**Source:** `advertising.csv`  
+**Size:** 200 records × 4 features
+
+### Features
+
+| Feature | Description |
+|---|---|
+| `TV` | Advertising budget spent on TV (in thousands) |
+| `Radio` | Advertising budget spent on Radio (in thousands) |
+| `Newspaper` | Advertising budget spent on Newspaper (in thousands) |
+| `Sales` | Target variable — product sales (in thousands of units) |
+
+### Statistical Summary
+
+| Feature | Mean | Std | Min | Max |
+|---|---|---|---|---|
+| TV | 147.04 | 85.85 | 0.7 | 296.4 |
+| Radio | 23.26 | 14.85 | 0.0 | 49.6 |
+| Newspaper | 30.55 | 21.78 | 0.3 | 114.0 |
+| Sales | 15.13 | 5.28 | 1.6 | 27.0 |
+
+---
+
+## ⚙️ Project Workflow
+
+### 1. 📥 Data Loading & Exploration
+- Loaded `advertising.csv` and inspected shape, dtypes, and summary statistics
+- Dataset: 200 rows × 4 columns, no missing values
+
+### 2. 📊 Exploratory Data Analysis
+- **Pairplots** of TV, Radio, and Newspaper vs Sales — revealed TV has the strongest linear relationship with Sales
+- **Histograms** for each feature distribution
+- **Correlation heatmap** — confirmed TV has the highest correlation with Sales (~0.78)
+
+### 3. 🤖 Model Training
+- Selected **TV** as the primary predictor feature
+- **Train/Test Split:** 70% training, 30% testing (`random_state=0`)
+- **Algorithm:** Linear Regression
+
+### 4. 📐 Model Equation
+
+```
+Sales = 7.14 + 0.055 × TV
+```
+
+- **Intercept:** 7.14
+- **Coefficient (TV):** 0.055
+
+### 5. 📈 Evaluation
+- Predictions visualized against actual sales using scatter plot with regression line
+
+---
+
+## 🛠️ Libraries Used
+
+```python
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+```
+
+---
+
+## 🚀 How to Run
+
+1. **Clone this repository**
+
+```bash
+git clone https://github.com/your-username/sales-prediction.git
+cd sales-prediction
+```
+
+2. **Install dependencies**
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn
+```
+
+3. **Add the dataset**
+
+Place `advertising.csv` in the project root directory.
+
+4. **Run the notebook**
+
+Open `SALES_PREDICTION_codsoft.ipynb` in Jupyter Notebook or Google Colab and run all cells.
+
+---
+
+## 🔍 Key Findings
+
+| Insight | Detail |
+|---|---|
+| Strongest predictor | TV advertising has highest correlation with Sales (~0.78) |
+| Radio correlation | Moderate positive correlation with Sales |
+| Newspaper correlation | Weak correlation with Sales |
+| Model intercept | 7.14 (baseline sales with no TV spending) |
+| TV coefficient | Each $1k increase in TV budget → ~0.055k increase in Sales |
+
+---
+
+## 🗂️ Project Structure
+
+```
+sales-prediction/
+│
+├── advertising.csv                    # Raw dataset
+├── SALES_PREDICTION_codsoft.ipynb     # Main notebook
+└── README.md                          # Project documentation
+```
+
+---
+
+## 👤 Author
+
+Developed as part of a **CodSoft Machine Learning Internship** project.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
